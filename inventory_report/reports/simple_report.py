@@ -19,10 +19,9 @@ class SimpleReport:
             key=lambda x: abs(x - date.today()),
         )
 
-        company_products = Counter(
+        company_bigger_stock = Counter(
             [product["nome_da_empresa"] for product in inventory]
-        )
-        company_bigger_stock = max([product for product in company_products])
+        ).most_common(1)[0][0]
 
         return (
             f"Data de fabricação mais antiga: {oldest_date}\n"
