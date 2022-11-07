@@ -4,7 +4,7 @@ from datetime import date
 
 class SimpleReport:
     @classmethod
-    def generate(cls, inventory: list[dict]) -> str:
+    def generate(cls, inventory):
 
         oldest_date = min(
             inventory,
